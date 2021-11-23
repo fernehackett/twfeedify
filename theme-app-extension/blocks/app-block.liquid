@@ -1,0 +1,41 @@
+<div class="twfeedify" data-width="{{ block.settings.width }}" data-height="{{ block.settings.height }}" data-theme="{{ block.settings.theme }}">
+</div>
+
+<style>
+</style>
+{% schema %}
+{
+  "name": "TWfeedify",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "width",
+      "label": "Width",
+      "default": "100%"
+    },
+    {
+      "type": "text",
+      "id": "height",
+      "label": "Height",
+      "default": "500px"
+    },
+    {
+      "type": "select",
+      "id": "theme",
+      "label": "Theme",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ],
+      "default": "light"
+    }
+  ]
+}
+{% endschema %}
