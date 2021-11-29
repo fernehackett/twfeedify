@@ -30,4 +30,9 @@ class DashboardController extends Controller
         auth()->user()->update($data);
         return response()->json(["succeed" => true, "msg" => "Saved!", "user" => auth()->user()]);
     }
+
+    public function tutorials()
+    {
+        return view("shopify.tutorials.index");
+    }
 }
