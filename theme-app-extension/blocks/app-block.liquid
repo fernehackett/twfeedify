@@ -1,7 +1,31 @@
-<div class="twfeedify" data-width="{{ block.settings.width }}" data-height="{{ block.settings.height }}" data-theme="{{ block.settings.theme }}">
+<div class="twfeedify-wrapper">
+  <div class="twfeedify" data-width="{{ block.settings.width }}" data-height="{{ block.settings.height }}" data-theme="{{ block.settings.theme }}">
+  </div>
+  {% if block.settings.html_embed.size > 0 %}
+  <div class="twfeedify-html">
+    {{ block.settings.html_embed }}
+  </div>
+  {% endif %}
 </div>
-
 <style>
+  .twfeedify-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: {{  block.settings.height }}px;
+  }
+  .twfeedify{
+    width: {{  block.settings.width }}px;
+    max-width: 100%;
+    margin: auto;
+  }
+  .twfeedify-html{
+    display: inline-block;
+    width: auto;
+    margin-left: 10px;
+    max-width: 100%;
+  }
+  {{ block.settings.css_embed }}
 </style>
 {% schema %}
 {
@@ -9,10 +33,14 @@
   "target": "section",
   "settings": [
     {
-      "type": "text",
+      "type": "range",
       "id": "width",
       "label": "Width",
-      "default": "100%"
+      "default": 1200,
+      "min": 0,
+      "max": 1200,
+      "step": 100,
+      "unit": "px"
     },
     {
       "type": "text",
@@ -35,6 +63,16 @@
         }
       ],
       "default": "light"
+    },
+    {
+      "type": "html",
+      "id": "html_embed",
+      "label": "Customize HTML"
+    },
+    {
+      "type": "html",
+      "id": "css_embed",
+      "label": "Customize CSS"
     }
   ]
 }
