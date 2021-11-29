@@ -28,7 +28,7 @@
             <button class="btn btn-outline-secondary" type="reset">Reset</button>
         </div>
         <div>
-            <a href="{{ route("shopify.tutorials") }}">Tutorials</a>
+            <a href="{{ route("shopify.instructions") }}">Instructions</a>
         </div>
         {{ Form::close() }}
     </div>
