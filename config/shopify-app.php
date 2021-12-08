@@ -324,6 +324,10 @@ return [
             'topic'   => env('SHOPIFY_WEBHOOK_1_TOPIC', 'APP_UNINSTALLED'),
             'address' => env('SHOPIFY_WEBHOOK_1_ADDRESS', trim(env('APP_URL'), '/') . '/webhook/app-uninstalled')
         ],
+        [
+            'topic' => env('SHOPIFY_WEBHOOK_2_TOPIC', 'APP_PURCHASES_ONE_TIME_UPDATE'),
+            'address' => env('SHOPIFY_WEBHOOK_2_ADDRESS', trim(env('APP_URL'), '/') . '/webhook/purchase'),
+        ]
     ],
 
     /*
