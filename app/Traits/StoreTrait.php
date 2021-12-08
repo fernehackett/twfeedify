@@ -2,10 +2,7 @@
 
 namespace App\Traits;
 
-use App\Models\MetaField;
 use App\Models\Product;
-use App\Models\ScriptTag;
-use App\Models\Store;
 
 trait StoreTrait
 {
